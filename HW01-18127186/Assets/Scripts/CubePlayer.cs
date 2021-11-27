@@ -9,7 +9,7 @@ public class CubePlayer : MonoBehaviour
     float speedMoveM = 8f;
     public float speed = 1.5f;
     public GameObject cap;
-    private List<GameObject> objClone = new List<GameObject>();
+    private static List<GameObject> objClone = new List<GameObject>();
     private bool rotate = false;
     private bool rotateB = false;
     private bool moveA = false, moveLeft = false;
@@ -138,9 +138,10 @@ public class CubePlayer : MonoBehaviour
         // Reset the color of the GameObject back to normal
         render.material.color = defaultColor;
     }
-    public void Update1Point ()
+    public void Update1Point (GameObject other)
     {
         point += 1;
+        objClone.Remove(other);
     }
     private void OnGUI()
     {

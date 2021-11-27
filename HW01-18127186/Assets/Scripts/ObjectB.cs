@@ -7,7 +7,7 @@ public class ObjectB : MonoBehaviour
     public CubePlayer player;
     public void OnMouseDown()
     {
-        player.Update1Point();
+        player.Update1Point(gameObject);
         Destroy(gameObject);
     }
 }
